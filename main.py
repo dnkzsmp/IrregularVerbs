@@ -1,5 +1,8 @@
+from verbs import verbs
+
+
 def main():
-    a = 0
+    verbs()
 
 
 if __name__ == '__main__':
