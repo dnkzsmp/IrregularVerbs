@@ -1,6 +1,5 @@
 import random
 
-
 def verbs():
     global rus
     global inf
