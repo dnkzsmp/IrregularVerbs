@@ -41,8 +41,3 @@ def wrong_all(wrong, correct):
 def counter(ch):
     count = int(ch)
     return count
-
-
-def Gapper(gap):
-    gap += 1
-    return gap

@@ -3,14 +3,15 @@ from tkinter import *
 
 
 def main():
-    global app1
-    global app2
     root = Tk()
-    app1 = StartMenu(root)
+    StartMenu(root)
     root.mainloop()
     window = Tk()
-    app2 = Graphic(window)
+    Graphic(window)
     window.mainloop()
+    result = Tk()
+    Result(result)
+    result.mainloop()
 
 
 if __name__ == '__main__':

@@ -12,6 +12,26 @@ corr = 0
 gap = 1
 
 
+def restart_app():
+    global count
+    global wron
+    global corr
+    global gap
+    win1 = Tk()
+    count = ''
+    wron = 0
+    corr = 0
+    gap = 1
+    StartMenu(win1)
+    win1.mainloop()
+    win2 = Tk()
+    Graphic(win2)
+    win2.mainloop()
+    win3 = Tk()
+    Result(win3)
+    win3.mainloop()
+
+
 class StartMenu:
     def __init__(self, parent):
         self.parent = parent
@@ -176,3 +196,32 @@ class Graphic:
     def exit_app(self):
         self.parent1.destroy()
         sys.exit()
+
+
+class Result:
+    def __init__(self, parent2):
+        global wron
+        global corr
+        self.parent2 = parent2
+        self.parent2.geometry('550x220')
+        self.parent2.title('Тренажер форм глагола "IrregularVerbs"')
+        self.parent2.resizable(False, False)
+        self.result = Label(self.parent2, text='Ваши результаты:\n')
+        self.result.config(font=('Arial', 20, 'bold'))
+        self.correct = Label(self.parent2, text='Правильно: ' + str(corr) + '\n', fg='green')
+        self.wrong = Label(self.parent2, text='Неправильно: ' + str(wron) + '\n', fg='red')
+        self.restart = Button(self.parent2, text='Начать заново', command=self.restart)
+        self.exit = Button(self.parent2, text='Выйти', command=self.exit_app)
+        self.result.pack()
+        self.correct.pack()
+        self.wrong.pack()
+        self.restart.pack()
+        self.exit.pack()
+
+    def exit_app(self):
+        self.parent2.destroy()
+        sys.exit()
+
+    def restart(self):
+        self.parent2.destroy()
+        restart_app()
