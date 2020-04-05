@@ -1,4 +1,4 @@
-from StartMenu import *
+from graphic import *
 from tkinter import *
 
 
