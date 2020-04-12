@@ -6,38 +6,40 @@ def verbs():
         strokes = f.readlines()
     lines = [line.strip() for line in strokes]
     words = random.choice(lines).split()
-    rus = words[0]
-    inf = words[1]
-    pasts = words[2]
-    pastp = words[3]
-    return rus, inf, pasts, pastp
+    f.close()
+    return words[0], words[1], words[2], words[3]
 
 
 def correct_all(wrong, correct):
-    wrong += 0
-    correct += 3
-    return wrong, correct
+    if wrong <= 30 or correct <= 30:
+        return wrong + 0, correct + 3
 
 
 def correct_one(wrong, correct):
-    wrong += 2
-    correct += 1
-    print(wrong)
-    return wrong, correct
+    if wrong <= 30 or correct <= 30:
+        return wrong + 2, correct + 1
 
 
 def correct_two(wrong, correct):
-    wrong += 1
-    correct += 2
-    return wrong, correct
+    if wrong <= 30 or correct <= 30:
+        return wrong + 1, correct + 2
 
 
 def wrong_all(wrong, correct):
-    wrong += 3
-    correct += 0
-    return wrong, correct
+    if wrong <= 30 or correct <= 30:
+        return wrong + 3, correct + 0
 
 
 def counter(ch):
     count = int(ch)
-    return count
+    if 1 <= count <= 10:
+        return count
+    else:
+        return 1
+
+
+def check_sum(wrong, correct, count):
+    if count == (wrong + correct) / 3 and wrong % 3 == 0 and correct % 3 == 0:
+        return 0
+    else:
+        return 1
