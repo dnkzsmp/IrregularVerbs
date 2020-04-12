@@ -137,39 +137,33 @@ class Graphic:
         pp = self.pp2.get()
         if inf == i and pasts == ps and pastp == pp:
             self.status.config(text='\n\nВы правильно ввели все 3 формы!', fg='green')
-            corr += 3
+            wron, corr = correct_all(wron, corr)
         if inf != i and pasts == ps and pastp == pp:
             self.status.config(text='\n\nВы ввели неправильно Infinitive(правильное слово: ' + inf + ')', fg='red')
-            corr += 2
-            wron += 1
+            wron, corr = correct_two(wron, corr)
         elif pasts != ps and inf == i and pastp == pp:
             self.status.config(text='\n\nВы ввели неправильно Past Simple(правильное слово: ' + pasts + ')', fg='red')
-            corr += 2
-            wron += 1
+            wron, corr = correct_two(wron, corr)
         elif pastp != pp and inf == i and pasts == ps:
             self.status.config(text='\n\nВы ввели неправильно Past Participle(правильное слово: ' + pastp + ')',
                                fg='red')
-            corr += 2
-            wron += 1
+            wron, corr = correct_two(wron, corr)
         if inf != i and pasts != ps and pastp == pp:
             self.status.config(text='\n\nВы ввели неправильно Infinitive(правильное слово: ' + inf + ')\n' +
                                     'Вы ввели неправильно Past Simple(правильное слово: ' + pasts + ')', fg='red')
-            corr += 1
-            wron += 2
+            wron, corr = correct_one(wron, corr)
         elif inf != i and pastp != pp and pasts == ps:
             self.status.config(text='\n\nВы ввели неправильно Infinitive(правильное слово: ' + inf + ')\n' +
                                     'Вы ввели неправильно Past Participle(правильное слово: ' + pastp + ')', fg='red')
-            corr += 1
-            wron += 2
+            wron, corr = correct_one(wron, corr)
         elif pasts != ps and pastp != pp and inf == i:
             self.status.config(text='\n\nВы ввели неправильно Past Simple(правильное слово: ' + pasts + ')\n' +
                                     'Вы ввели неправильно Past Participle(правильное слово: ' + pastp + ')', fg='red')
-            corr += 1
-            wron += 2
+            wron, corr = correct_one(wron, corr)
         if inf != i and pasts != ps and pastp != pp:
             self.status.config(text='\n\nВы неправильно ввели все 3 формы\n'
                                     '(правильные слова: ' + inf + ', ' + pasts + ', ' + pastp + ')', fg='red')
-            wron += 3
+            wron, corr = wrong_all(wron, corr)
         self.check.config(state=DISABLED)
         self.next.config(state=NORMAL)
 
@@ -192,6 +186,7 @@ class Graphic:
             self.ps2.delete(0, 'end')
             self.pp2.delete(0, 'end')
         else:
+            check_sum(wron, corr, count)
             self.parent1.destroy()
 
     def exit_app(self):
