@@ -39,18 +39,29 @@ class StartMenu:
         self.parent.title('Тренажер форм глагола "IrregularVerbs"')
         self.parent.config(bg='#FFE1F9')
         self.parent.resizable(False, False)
-        self.hello1 = Label(self.parent, text='Добро пожаловать в тренажер', bg='#FFE1F9')
+        self.hello1 = Label(self.parent,
+                            text='Добро пожаловать в тренажер',
+                            bg='#FFE1F9')
         self.hello1.config(font=('Arial', 13, 'bold'))
-        self.hello2 = Label(self.parent, text='форм неправильного глагола "IrregularVerbs"\n', bg='#FFE1F9')
+        self.hello2 = Label(self.parent,
+                            text='форм неправильного'
+                                 ' глагола "IrregularVerbs"\n',
+                            bg='#FFE1F9')
         self.hello2.config(font=('Arial', 13, 'bold'))
-        self.hello3 = Label(self.parent, text='Введите кол-во глаголов для тренировки(от 1 до 10)', bg='#FFE1F9')
+        self.hello3 = Label(self.parent,
+                            text='Введите кол-во глаголов для '
+                                 'тренировки(от 1 до 10)',
+                            bg='#FFE1F9')
         self.hello3.config(font=5)
         self.verbs_entry = Entry(self.parent, bd=4)
-        self.start = Button(self.parent, text='Начать', command=self.start_check)
+        self.start = Button(self.parent, text='Начать',
+                            command=self.start_check)
         self.start.config(font=2)
-        self.Exit = Button(self.parent, text='Выйти', command=self.exit_app)
+        self.Exit = Button(self.parent, text='Выйти',
+                           command=self.exit_app)
         self.Exit.config(font=2)
-        self.PS = Label(self.parent, text='', fg='#FFE1F9', bg='#FFE1F9')
+        self.PS = Label(self.parent, text='',
+                        fg='#FFE1F9', bg='#FFE1F9')
         self.hello1.pack()
         self.hello2.pack()
         self.hello3.pack()
@@ -71,17 +82,20 @@ class StartMenu:
             s = int(ch)
             if s > 10:
                 self.verbs_entry.delete(0, 'end')
-                self.PS.config(text='\n*максимальное число: 10', font=3, fg='red')
+                self.PS.config(text='\n*максимальное число: 10',
+                               font=3, fg='red')
             if s == 0:
                 self.verbs_entry.delete(0, 'end')
-                self.PS.config(text='\n*минимальное число: 1', fg='red')
+                self.PS.config(text='\n*минимальное число: 1',
+                               fg='red')
             elif 1 <= s <= 10:
                 count = counter(ch)
                 self.verbs_entry.delete(0, 'end')
                 self.parent.destroy()
         else:
             self.verbs_entry.delete(0, 'end')
-            self.PS.config(text='\n*надо вести число число от 1 до 10', fg='red')
+            self.PS.config(text='\n*надо вести число '
+                                'число от 1 до 10', fg='red')
 
     def exit_app(self):
         self.parent.destroy()
@@ -97,16 +111,25 @@ class Graphic:
         rus, inf, pasts, pastp = verbs(rus, inf, pasts, pastp)
         self.parent1 = parent1
         self.parent1.geometry('550x360+630+240')
-        self.parent1.title('Тренажер форм глагола "IrregularVerbs"')
+        self.parent1.title('Тренажер форм глагола '
+                           '"IrregularVerbs"')
         self.parent1.config(bg='#FFE1F9')
         self.parent1.resizable(False, False)
-        self.word = Label(self.parent1, text='Ваше слово: ' + rus + '\n', bg='#FFE1F9', fg='black')
+        self.word = Label(self.parent1,
+                          text='Ваше слово: ' + rus + '\n',
+                          bg='#FFE1F9', fg='black')
         self.word.config(font=('Arial', 20, 'bold'))
-        self.inf1 = Label(self.parent1, text='Введите Infinitive', bg='#FFE1F9')
+        self.inf1 = Label(self.parent1,
+                          text='Введите Infinitive',
+                          bg='#FFE1F9')
         self.infi = Entry(self.parent1, bd=4)
-        self.ps1 = Label(self.parent1, text='Введите Past Simple', bg='#FFE1F9')
+        self.ps1 = Label(self.parent1,
+                         text='Введите Past Simple',
+                         bg='#FFE1F9')
         self.ps2 = Entry(self.parent1, bd=4)
-        self.pp1 = Label(self.parent1, text='Введите Past Participle', bg='#FFE1F9')
+        self.pp1 = Label(self.parent1,
+                         text='Введите Past Participle',
+                         bg='#FFE1F9')
         self.pp2 = Entry(self.parent1, bd=4)
         self.word.pack()
         self.inf1.pack()
@@ -115,15 +138,24 @@ class Graphic:
         self.ps2.pack()
         self.pp1.pack()
         self.pp2.pack()
-        self.check = Button(self.parent1, text='Проверить', command=self.checking)
+        self.check = Button(self.parent1,
+                            text='Проверить',
+                            command=self.checking)
         self.check.pack()
-        self.next = Button(self.parent1, text='Следующее', command=self.rechange)
+        self.next = Button(self.parent1,
+                           text='Следующее',
+                           command=self.rechange)
         self.next.config(state=DISABLED)
         self.next.pack()
-        self.status = Label(self.parent1, text='\n\n*вводить надо в единственном числе'
-                                               '\n*использовать только строчные английские буквы', bg='#FFE1F9')
+        self.status = Label(self.parent1,
+                            text='\n\n*вводить надо '
+                                 'в единственном числе'
+                            '\n*использовать только '
+                                 'строчные английские буквы',
+                            bg='#FFE1F9')
         self.status.pack()
-        self.parent1.protocol("WM_DELETE_WINDOW", self.exit_app)
+        self.parent1.protocol("WM_DELETE_WINDOW",
+                              self.exit_app)
 
     def checking(self):
         global wron
@@ -136,33 +168,64 @@ class Graphic:
         ps = self.ps2.get()
         pp = self.pp2.get()
         if inf == i and pasts == ps and pastp == pp:
-            self.status.config(text='\n\nВы правильно ввели все 3 формы!', fg='green')
+            self.status.config(text='\n\nВы правильно'
+                                    ' ввели все 3 формы!',
+                               fg='green')
             wron, corr = correct_all(wron, corr)
         if inf != i and pasts == ps and pastp == pp:
-            self.status.config(text='\n\nВы ввели неправильно Infinitive(правильное слово: ' + inf + ')', fg='red')
+            self.status.config(text='\n\nВы ввели '
+                                    'неправильно Infinitive'
+                                    '(правильное слово: ' +
+                                    inf + ')', fg='red')
             wron, corr = correct_two(wron, corr)
         elif pasts != ps and inf == i and pastp == pp:
-            self.status.config(text='\n\nВы ввели неправильно Past Simple(правильное слово: ' + pasts + ')', fg='red')
+            self.status.config(text='\n\nВы ввели '
+                                    'неправильно Past Simple'
+                                    '(правильное слово: ' +
+                                    pasts + ')', fg='red')
             wron, corr = correct_two(wron, corr)
         elif pastp != pp and inf == i and pasts == ps:
-            self.status.config(text='\n\nВы ввели неправильно Past Participle(правильное слово: ' + pastp + ')',
+            self.status.config(text='\n\nВы ввели '
+                                    'неправильно Past '
+                                    'Participle(правильное'
+                                    ' слово: ' + pastp + ')',
                                fg='red')
             wron, corr = correct_two(wron, corr)
         if inf != i and pasts != ps and pastp == pp:
-            self.status.config(text='\n\nВы ввели неправильно Infinitive(правильное слово: ' + inf + ')\n' +
-                                    'Вы ввели неправильно Past Simple(правильное слово: ' + pasts + ')', fg='red')
+            self.status.config(text='\n\nВы ввели '
+                                    'неправильно '
+                                    'Infinitive(правильное '
+                                    'слово: ' + inf + ')\n' +
+                                    'Вы ввели неправильно'
+                                    ' Past Simple(правильное'
+                                    ' слово: ' + pasts + ')',
+                               fg='red')
             wron, corr = correct_one(wron, corr)
         elif inf != i and pastp != pp and pasts == ps:
-            self.status.config(text='\n\nВы ввели неправильно Infinitive(правильное слово: ' + inf + ')\n' +
-                                    'Вы ввели неправильно Past Participle(правильное слово: ' + pastp + ')', fg='red')
+            self.status.config(text='\n\nВы ввели неправильно'
+                                    ' Infinitive(правильное '
+                                    'слово: ' + inf + ')\n' +
+                                    'Вы ввели неправильно'
+                                    ' Past Participle'
+                                    '(правильное слово: ' +
+                                    pastp + ')', fg='red')
             wron, corr = correct_one(wron, corr)
         elif pasts != ps and pastp != pp and inf == i:
-            self.status.config(text='\n\nВы ввели неправильно Past Simple(правильное слово: ' + pasts + ')\n' +
-                                    'Вы ввели неправильно Past Participle(правильное слово: ' + pastp + ')', fg='red')
+            self.status.config(text='\n\nВы ввели неправильно'
+                                    ' Past Simple(правильное '
+                                    'слово: ' + pasts + ')\n' +
+                                    'Вы ввели неправильно'
+                                    ' Past Participle'
+                                    '(правильное слово: ' +
+                                    pastp + ')', fg='red')
             wron, corr = correct_one(wron, corr)
         if inf != i and pasts != ps and pastp != pp:
-            self.status.config(text='\n\nВы неправильно ввели все 3 формы\n'
-                                    '(правильные слова: ' + inf + ', ' + pasts + ', ' + pastp + ')', fg='red')
+            self.status.config(text='\n\nВы неправильно '
+                                    'ввели все 3 формы\n'
+                                    '(правильные слова: ' +
+                                    inf + ', ' + pasts +
+                                    ', ' + pastp + ')',
+                               fg='red')
             wron, corr = wrong_all(wron, corr)
         self.check.config(state=DISABLED)
         self.next.config(state=NORMAL)
@@ -178,8 +241,10 @@ class Graphic:
             gap += 1
             rus, inf, pasts, pastp = verbs(rus, inf, pasts, pastp)
             self.word.config(text='Ваше слово: ' + rus + '\n')
-            self.status.config(fg='black', text='\n\n*вводить надо в единственном числе'
-                                                '\n*использовать только строчные английские буквы')
+            self.status.config(fg='black', text='\n\n*вводить надо в '
+                                                'единственном числе'
+                                                '\n*использовать только '
+                                                'строчные английские буквы')
             self.next.config(state=DISABLED)
             self.check.config(state=NORMAL)
             self.infi.delete(0, 'end')
@@ -203,14 +268,21 @@ class Result:
         self.parent2.title('Тренажер форм глагола "IrregularVerbs"')
         self.parent2.config(bg='#FFE1F9')
         self.parent2.resizable(False, False)
-        self.result = Label(self.parent2, text='Ваши результаты:\n', bg='#FFE1F9', fg='black')
+        self.result = Label(self.parent2, text='Ваши результаты:\n',
+                            bg='#FFE1F9', fg='black')
         self.result.config(font=('Arial', 20, 'bold'))
-        self.correct = Label(self.parent2, text='Правильно: ' + str(corr) + '\n', fg='#006015', bg='#FFE1F9')
+        self.correct = Label(self.parent2, text='Правильно: ' + str(corr) +
+                                                '\n', fg='#006015',
+                             bg='#FFE1F9')
         self.correct.config(font='bold')
-        self.wrong = Label(self.parent2, text='Неправильно: ' + str(wron) + '\n', fg='red', bg='#FFE1F9')
+        self.wrong = Label(self.parent2, text='Неправильно: ' + str(wron) +
+                                              '\n', fg='red',
+                           bg='#FFE1F9')
         self.wrong.config(font='bold')
-        self.restart = Button(self.parent2, text='Начать заново', command=self.restart)
-        self.exit = Button(self.parent2, text='Выйти', command=self.exit_app)
+        self.restart = Button(self.parent2, text='Начать заново',
+                              command=self.restart)
+        self.exit = Button(self.parent2, text='Выйти',
+                           command=self.exit_app)
         self.result.pack()
         self.correct.pack()
         self.wrong.pack()

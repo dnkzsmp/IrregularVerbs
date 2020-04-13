@@ -4,7 +4,6 @@
     <list default="true" id="93e75156-fe2f-48f7-9824-d7808b59e137" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/graphic.py" beforeDir="false" afterPath="$PROJECT_DIR$/graphic.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/verbs.py" beforeDir="false" afterPath="$PROJECT_DIR$/verbs.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +76,7 @@
       <workItem from="1586756152084" duration="9000" />
       <workItem from="1586762373528" duration="692000" />
       <workItem from="1586763563391" duration="1213000" />
+      <workItem from="1586767478014" duration="561000" />
     </task>
     <servers />
   </component>
@@ -92,28 +92,28 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="743" y="311" width="424" height="480" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1586090097501" />
-    <state width="1874" height="387" key="GridCell.Tab.0.bottom" timestamp="1586764569923">
+    <state width="1874" height="387" key="GridCell.Tab.0.bottom" timestamp="1586767468033">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="387" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1586764569923" />
-    <state width="1874" height="387" key="GridCell.Tab.0.center" timestamp="1586764569921">
+    <state width="1874" height="387" key="GridCell.Tab.0.bottom/0.27.1920.1053@0.27.1920.1053" timestamp="1586767468033" />
+    <state width="1874" height="387" key="GridCell.Tab.0.center" timestamp="1586767468033">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="387" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1586764569921" />
-    <state width="1874" height="387" key="GridCell.Tab.0.left" timestamp="1586764569920">
+    <state width="1874" height="387" key="GridCell.Tab.0.center/0.27.1920.1053@0.27.1920.1053" timestamp="1586767468033" />
+    <state width="1874" height="387" key="GridCell.Tab.0.left" timestamp="1586767468032">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="387" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1586764569920" />
-    <state width="1874" height="387" key="GridCell.Tab.0.right" timestamp="1586764569922">
+    <state width="1874" height="387" key="GridCell.Tab.0.left/0.27.1920.1053@0.27.1920.1053" timestamp="1586767468032" />
+    <state width="1874" height="387" key="GridCell.Tab.0.right" timestamp="1586767468033">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="1874" height="387" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586764569922" />
+    <state width="1874" height="387" key="GridCell.Tab.0.right/0.27.1920.1053@0.27.1920.1053" timestamp="1586767468033" />
     <state x="449" y="188" key="SettingsEditor" timestamp="1586090085673">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="449" y="188" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1586090085673" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/IrregVerbs$main.coverage" NAME="main Coverage Results" MODIFIED="1586764492533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/IrregVerbs$main.coverage" NAME="main Coverage Results" MODIFIED="1586768037801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
