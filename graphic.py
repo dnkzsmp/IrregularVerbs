@@ -94,7 +94,7 @@ class Graphic:
         global inf
         global pasts
         global pastp
-        rus, inf, pasts, pastp = verbs()
+        rus, inf, pasts, pastp = verbs(rus, inf, pasts, pastp)
         self.parent1 = parent1
         self.parent1.geometry('550x360+630+240')
         self.parent1.title('Тренажер форм глагола "IrregularVerbs"')
@@ -176,7 +176,7 @@ class Graphic:
         global pastp
         if gap < int(count):
             gap += 1
-            rus, inf, pasts, pastp = verbs()
+            rus, inf, pasts, pastp = verbs(rus, inf, pasts, pastp)
             self.word.config(text='Ваше слово: ' + rus + '\n')
             self.status.config(fg='black', text='\n\n*вводить надо в единственном числе'
                                                 '\n*использовать только строчные английские буквы')
