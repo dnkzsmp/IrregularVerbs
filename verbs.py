@@ -3,7 +3,8 @@ import sys
 
 
 def verbs(rus, inf, pasts, pastp):
-    if not rus.isdigit() and not inf.isdigit() and not pasts.isdigit() and not pastp.isdigit():
+    if not rus.isdigit() and not inf.isdigit() and not \
+            pasts.isdigit() and not pastp.isdigit():
         with open('verbs.txt', encoding='utf-8') as f:
             strokes = f.readlines()
         lines = [line.strip() for line in strokes]
@@ -51,7 +52,8 @@ def counter(ch):
 
 
 def check_sum(wrong, correct, count):
-    if count == (wrong + correct) / 3 and wrong % 3 == 0 and correct % 3 == 0:
+    if count == (wrong + correct) / 3 and wrong % 3 == 0 and \
+            correct % 3 == 0:
         return 0
     else:
         return -1
