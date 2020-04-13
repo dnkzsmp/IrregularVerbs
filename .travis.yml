@@ -3,7 +3,10 @@ python:
         - "3.6"
 cache: pip
 install:
-        - pip install pycodestyle coverage codecov
+        - pip install flake8
 script:
-        - pycodestyle --exclude=venv
-        - python test.py
+        - flake8 main.py
+        - flake8 graphic.py
+        - flake8 verbs.py
+        - flake8 test.py
+        - python -m unittest discover
