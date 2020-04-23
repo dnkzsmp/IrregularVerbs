@@ -1,15 +1,15 @@
 from tkinter import *
 
 
-class EndWindow:
-    def __init__(self, root, wrong, append):
-        self.root = root
+class EndWindow(Tk):
+    def __init__(self, wrong, append):
+        super().__init__()
         self.wrong = wrong
         self.correct = append
-        self.label = Label(self.root)
-        self.look = Button(self.root)
-        self.exit = Button(self.root)
-        self.finish = Label(self.root)
+        self.label = Label(self)
+        self.look = Button(self)
+        self.exit = Button(self)
+        self.finish = Label(self)
         self.label.pack()
         self.look.pack()
         self.exit.pack()
@@ -17,11 +17,11 @@ class EndWindow:
         self.initUI()
 
     def initUI(self):
-        self.root.title('Тренажер IrregularVerbs')
-        self.root.config(bg='#FFE1F9')
-        self.root.resizable(False, False)
-        self.root.protocol("WM_DELETE_WINDOW",
-                           self.exit_app)
+        self.title('Тренажер IrregularVerbs')
+        self.config(bg='#FFE1F9')
+        self.resizable(False, False)
+        self.protocol("WM_DELETE_WINDOW",
+                      self.exit_app)
         self.label.config(text='Спасибо, что приняли участие в тренажере\n'
                                'IrregularVerbs. Надеемся, что ваши знания\n'
                                'по английскому стали лучше\n'
@@ -56,5 +56,5 @@ class EndWindow:
         self.look.config(state=DISABLED)
 
     def exit_app(self):
-        self.root.destroy()
+        self.destroy()
         sys.exit()
