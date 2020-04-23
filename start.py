@@ -1,4 +1,3 @@
-from tkinter import *
 from rise.startwindow import StartWindow
 
 
@@ -19,8 +18,7 @@ def main():
             strokes = fin.readlines()
         lines = [line.strip() for line in strokes]
         fin.close()
-        app = Tk()
-        StartWindow(app, lines)
+        app = StartWindow(lines)
         app.mainloop()
     else:
         print('Файл не открыт. Завершена работа программы.')
