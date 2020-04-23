@@ -3,8 +3,9 @@ from end.endwindow import EndWindow
 import random
 
 
-class Graphic:
-    def __init__(self, s, verbs, root):
+class Graphic(Tk):
+    def __init__(self, s, verbs):
+        super().__init__()
         self.wron = 0
         self.corr = 0
         self.gap = 1
@@ -14,30 +15,29 @@ class Graphic:
         self.corr = []
         self.wrong = []
 
-        self.root = root
-        self.root.geometry('400x360+630+240')
-        self.root.resizable(False, False)
-        self.word = Label(self.root)
-        self.label1 = Label(self.root)
-        self.inf = Entry(self.root, bd=4)
-        self.label2 = Label(self.root)
-        self.ps = Entry(self.root, bd=4)
-        self.label3 = Label(self.root)
-        self.pp = Entry(self.root, bd=4)
-        self.check = Button(self.root,
+        self.geometry('400x360+630+240')
+        self.resizable(False, False)
+        self.word = Label(self)
+        self.label1 = Label(self)
+        self.inf = Entry(self, bd=4)
+        self.label2 = Label(self)
+        self.ps = Entry(self, bd=4)
+        self.label3 = Label(self)
+        self.pp = Entry(self, bd=4)
+        self.check = Button(self,
                             text='Отправить',
                             command=self.checking)
         self.check.pack()
         self.check.config(state=NORMAL)
-        self.next = Button(self.root,
+        self.next = Button(self,
                            text='Следующее',
                            command=self.change)
         self.next.config(state=DISABLED)
         self.next.pack()
-        self.status = Label(self.root)
+        self.status = Label(self)
         self.status.pack()
-        self.root.protocol("WM_DELETE_WINDOW",
-                           self.exit_app)
+        self.protocol("WM_DELETE_WINDOW",
+                      self.exit_app)
         self.word.pack()
         self.label1.pack()
         self.inf.pack()
@@ -48,9 +48,9 @@ class Graphic:
         self.initUI()
 
     def initUI(self):
-        self.root.title('Тренажер форм глагола '
-                        '"IrregularVerbs"')
-        self.root.config(bg='#FFE1F9')
+        self.title('Тренажер форм глагола '
+                   '"IrregularVerbs"')
+        self.config(bg='#FFE1F9')
         self.word.config(text='Ваше слово: ' + self.verbs[0] + '\n',
                          bg='#FFE1F9', fg='black', font=('Arial', 20, 'bold'))
         self.label1.config(text='Введите Infinitive',
@@ -111,11 +111,10 @@ class Graphic:
             self.ps.delete(0, 'end')
             self.pp.delete(0, 'end')
         else:
-            self.root.destroy()
-            win = Tk()
-            EndWindow(win, self.wrong, self.corr)
+            self.destroy()
+            win = EndWindow(self.wrong, self.corr)
             win.mainloop()
 
     def exit_app(self):
-        self.root.destroy()
+        self.destroy()
         sys.exit()
