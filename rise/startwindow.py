@@ -32,15 +32,19 @@ class StartWindow(Tk):
         self.resizable(False, False)
         self.title('Тренажер форм глагола "IrregularVerbs"')
         self.config(bg='#FFE1F9')
-        self.hello1.config(text='Добро пожаловать в тренажер', bg='#FFE1F9', font=('Arial', 13, 'bold'))
-        self.hello2.config(text='форм неправильного глагола "IrregularVerbs"\n', bg='#FFE1F9',
+        self.hello1.config(text='Добро пожаловать в тренажер', bg='#FFE1F9',
                            font=('Arial', 13, 'bold'))
-        self.hello3.config(text='Введите кол-во глаголов для тренировки(от 1 до 10)', bg='#FFE1F9', font=5)
+        self.hello2.config(text='форм неправильного глагола '
+                                '"IrregularVerbs"\n', bg='#FFE1F9',
+                           font=('Arial', 13, 'bold'))
+        self.hello3.config(text='Введите кол-во глаголов для тренировки'
+                                '(от 1 до 10)', bg='#FFE1F9', font=5)
         self.start.config(font=2)
         self.PS.config(text='', fg='#FFE1F9', bg='#FFE1F9')
 
     def start_check(self):
-        if self.verbs_entry.get().isdigit() and not self.verbs_entry.get().isspace():
+        if self.verbs_entry.get().isdigit() and \
+                not self.verbs_entry.get().isspace():
             self.s = int(self.verbs_entry.get())
             if self.s > 10:
                 self.verbs_entry.delete(0, 'end')
@@ -54,7 +58,8 @@ class StartWindow(Tk):
                 self.destroy()
                 root = Graphic(self.s, self.verbs)
                 root.mainloop()
-        elif not self.verbs_entry.get().isdigit() or self.verbs_entry.get().isspace():
+        elif not self.verbs_entry.get().isdigit() or \
+                self.verbs_entry.get().isspace():
             self.verbs_entry.delete(0, 'end')
             self.PS.config(text='\n*надо вести число '
                                 'число от 1 до 10', fg='red')

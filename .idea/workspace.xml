@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93e75156-fe2f-48f7-9824-d7808b59e137" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tox.ini" beforeDir="false" afterPath="$PROJECT_DIR$/tox.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/end/endwindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/end/endwindow.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/process/graphic.py" beforeDir="false" afterPath="$PROJECT_DIR$/process/graphic.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rise/startwindow.py" beforeDir="false" afterPath="$PROJECT_DIR$/rise/startwindow.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/start.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.start">
@@ -117,6 +119,8 @@
       <workItem from="1587789283706" duration="116000" />
       <workItem from="1587789738314" duration="967000" />
       <workItem from="1587790717195" duration="9521000" />
+      <workItem from="1587804913019" duration="12000" />
+      <workItem from="1587804925581" duration="297000" />
     </task>
     <servers />
   </component>
@@ -128,10 +132,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="418" y="211" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1587790648677" />
-    <state x="743" y="311" width="424" height="480" key="FileChooserDialogImpl" timestamp="1587790535383">
+    <state x="743" y="311" width="424" height="480" key="FileChooserDialogImpl" timestamp="1587804920747">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="743" y="311" width="424" height="480" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1587790535383" />
+    <state x="743" y="311" width="424" height="480" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1587804920747" />
     <state width="1874" height="301" key="GridCell.Tab.0.bottom" timestamp="1587800669606">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>

@@ -79,11 +79,13 @@ class Graphic(Tk):
                 self.corr.append(self.verbs[0])
             else:
                 self.wrong.append(self.verbs[0])
-            self.status.config(fg='black', text='\n\nНажмите "Следующее"\n')
+            self.status.config(fg='black', text='\n\n'
+                                                'Нажмите "Следующее"\n')
             self.next.config(state=NORMAL)
             self.check.config(state=DISABLED)
         else:
-            self.status.config(fg='red', text='\n\nОшибка ввода\nВведите еще раз')
+            self.status.config(fg='red', text='\n\nОшибка ввода\n'
+                                              'Введите еще раз')
             self.inf.delete(0, 'end')
             self.ps.delete(0, 'end')
             self.pp.delete(0, 'end')
@@ -93,7 +95,8 @@ class Graphic(Tk):
             self.gap += 1
             self.verbs = random.choice(self.list).split()
             self.word.config(text='Ваше слово: ' + self.verbs[0] + '\n')
-            self.status.config(fg='black', text='\n\n*вводить надо в единственном числе'
+            self.status.config(fg='black', text='\n\n*вводить надо в '
+                                                'единственном числе'
                                                 '\n*использовать только '
                                                 'строчные английские буквы')
             self.next.config(state=DISABLED)
@@ -130,7 +133,8 @@ def check_lists(words, verbs):
 
 def check_word(word):
     if word:
-        if not word.startswith(' ') and not word.endswith(' ') and word.islower():
+        if not word.startswith(' ') and \
+                not word.endswith(' ') and word.islower():
             return word
         else:
             return '-1'
