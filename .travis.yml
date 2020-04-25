@@ -5,8 +5,8 @@ cache: pip
 install:
         - pip install pylint
 script:
-        - pylint start.py
-        - pylint rise/startwindow.py
-        - pylint process/graphic.py
-        - pylint end/endwindow.py
+        - pylint start.py --disable=C0114,C0116
+        - pylint rise/startwindow.py --disable=E0611,C0103,C0116,C0115,R0902,C0114
+        - pylint process/graphic.py --disable=C0114,C0103,C0115,R0902,C0116,C0200,R1705,R1710
+        - pylint end/endwindow.py --disable=C0114,C0115,C0103,C0116
         - python -m unittest discover
