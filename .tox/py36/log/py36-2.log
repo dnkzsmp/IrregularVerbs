@@ -1,0 +1,17 @@
+action: py36, msg: envreport
+cwd: /home/danil/IrregVerbs
+cmd: /home/danil/IrregVerbs/.tox/py36/bin/python -m pip freeze
+appdirs==1.4.3
+distlib==0.3.0
+filelock==3.0.12
+importlib-metadata==1.6.0
+importlib-resources==1.4.0
+packaging==20.3
+pluggy==0.13.1
+py==1.8.1
+pyparsing==2.4.7
+six==1.14.0
+toml==0.10.0
+tox==3.14.6
+virtualenv==20.0.18
+zipp==3.1.0

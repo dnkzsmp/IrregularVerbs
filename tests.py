@@ -29,13 +29,9 @@ class TestUnits(unittest.TestCase):
         check5 = open_file(' ')
         self.assertEqual(False, check5)
 
-    def test_good_stroke1(self):
+    def test_good_stroke(self):
         word1 = check_word('hello')
         self.assertEqual('hello', word1)
-
-    def test_good_stroke2(self):
-        word2 = check_word('12345')
-        self.assertEqual('12345', word2)
 
     def test_bad_stroke1(self):
         word1 = check_word(' hello')
@@ -52,6 +48,10 @@ class TestUnits(unittest.TestCase):
     def test_bad_stroke4(self):
         word4 = check_word(' ')
         self.assertEqual('-1', word4)
+        
+    def test_good_stroke5(self):
+        word5 = check_word('12345')
+        self.assertEqual('-1', word5)
 
     def test_good_lists(self):
         bool1 = check_lists(['be', 'was', 'been'], ['быть', 'be', 'was', 'been'])
