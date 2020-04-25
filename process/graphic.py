@@ -2,8 +2,8 @@ from tkinter import Tk
 from tkinter import Label, Entry, Button
 from tkinter import NORMAL, DISABLED
 import sys
-from end.endwindow import EndWindow
 import random
+from end.endwindow import EndWindow
 
 
 class Graphic(Tk):
