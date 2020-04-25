@@ -4,14 +4,9 @@ python:
 cache: pip
 install:
         - pip install pylint
-        - pip install pep8
 script:
-        - pylint start.py --disable=all --enable=similarities
-        - pylint rise/startwindow.py --disable=all --enable=similarities
-        - pylint process/graphic.py --disable=all --enable=similarities
-        - pylint end/endwindow.py --disable=all --enable=similarities
-        - pep8 start.py
-        - pep8 rise/startwindow.py
-        - pep8 process/graphic.py
-        - pep8 end/endwindow.py
+        - pylint start.py
+        - pylint rise/startwindow.py
+        - pylint process/graphic.py
+        - pylint end/endwindow.py
         - python -m unittest discover
