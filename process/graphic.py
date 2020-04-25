@@ -135,7 +135,5 @@ def check_word(word):
         if not word.startswith(' ') and \
                 not word.endswith(' ') and word.islower():
             return word
-        else:
-            return '-1'
-    else:
         return '-1'
+    return '-1'

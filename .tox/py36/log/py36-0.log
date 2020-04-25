@@ -1,7 +1,0 @@
-action: py36, msg: getenv
-cwd: /home/danil/IrregVerbs/.tox
-cmd: /usr/bin/python -m virtualenv --no-download --python /usr/bin/python3.6 py36
-created virtual environment CPython3.6.9.final.0-64 in 379ms
-  creator CPython3Posix(dest=/home/danil/IrregVerbs/.tox/py36, clear=False, global=False)
-  seeder FromAppData(download=False, pip=latest, setuptools=latest, wheel=latest, via=copy, app_data_dir=/home/danil/.local/share/virtualenv/seed-app-data/v1.0.1)
-  activators CShellActivator,PythonActivator,XonshActivator,FishActivator,BashActivator,PowerShellActivator
