@@ -3,10 +3,10 @@ python:
         - "3.6"
 cache: pip
 install:
-        - pip install pep8
+        - pip install pylint
 script:
-        - pep8 main.py
-        - pep8 graphic.py
-        - pep8 verbs.py
-        - pep8 test.py
+        - pylint start.py
+        - pylint rise/startwindow.py
+        - pylint process/grraphic.py
+        - pylint end/endwindow.py
         - python -m unittest discover
