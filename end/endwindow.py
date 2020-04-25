@@ -52,7 +52,7 @@ class EndWindow(Tk):
             else:
                 lb_correct.pack(pady=15)
         else:
-            self.finish.config(text='Правильных нету', fg='red')
+            self.finish.config(text='Нету правильных', fg='red')
         self.look.config(state=DISABLED)
 
     def exit_app(self):

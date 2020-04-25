@@ -15,8 +15,6 @@ class Graphic(Tk):
         self.corr = []
         self.wrong = []
 
-        self.geometry('400x360+630+240')
-        self.resizable(False, False)
         self.word = Label(self)
         self.label1 = Label(self)
         self.inf = Entry(self, bd=4)
@@ -48,6 +46,8 @@ class Graphic(Tk):
         self.initUI()
 
     def initUI(self):
+        self.geometry('400x360+630+240')
+        self.resizable(False, False)
         self.title('Тренажер форм глагола '
                    '"IrregularVerbs"')
         self.config(bg='#FFE1F9')
@@ -66,31 +66,22 @@ class Graphic(Tk):
                            bg='#FFE1F9')
 
     def checking(self):
-        inf = self.inf.get()
-        ps = self.ps.get()
-        pp = self.pp.get()
-        count = 0
-        if inf and ps and pp:
-            sravn = [inf, ps, pp]
-            if inf.isalpha() and ps.isalpha() and pp.isalpha() and \
-                    not inf.isspace() and not ps.isspace() and not pp.isspace() and \
-                    not inf.startswith(' ') and not ps.startswith(' ') and not pp.startswith(' ') and \
-                    not inf.endswith(' ') and not ps.endswith(' ') and not pp.endswith(' '):
-                for i in range(len(sravn)):
-                    if sravn[i] != self.verbs[i + 1]:
-                        count += 1
-                if count == 0:
-                    self.corr.append(self.verbs[0])
-                else:
-                    self.wrong.append(self.verbs[0])
-                    self.status.config(fg='black', text='\n\nНажмите "Следующее"\n')
-                self.next.config(state=NORMAL)
-                self.check.config(state=DISABLED)
+        w1 = self.inf.get()
+        w2 = self.ps.get()
+        w3 = self.pp.get()
+        inf = check_word(w1)
+        ps = check_word(w2)
+        pp = check_word(w3)
+        sravn = [inf, ps, pp]
+        if all(i.isalpha() for i in sravn):
+            count = check_lists(sravn, self.verbs)
+            if count is True:
+                self.corr.append(self.verbs[0])
             else:
-                self.status.config(fg='red', text='\n\nОшибка ввода\nВведите еще раз')
-                self.inf.delete(0, 'end')
-                self.ps.delete(0, 'end')
-                self.pp.delete(0, 'end')
+                self.wrong.append(self.verbs[0])
+            self.status.config(fg='black', text='\n\nНажмите "Следующее"\n')
+            self.next.config(state=NORMAL)
+            self.check.config(state=DISABLED)
         else:
             self.status.config(fg='red', text='\n\nОшибка ввода\nВведите еще раз')
             self.inf.delete(0, 'end')
@@ -118,3 +109,30 @@ class Graphic(Tk):
     def exit_app(self):
         self.destroy()
         sys.exit()
+
+
+def check_lists(words, verbs):
+    sravn = []
+    for i in range(len(words)):
+        if words[i] == verbs[i + 1]:
+            sravn.append(True)
+        else:
+            sravn.append(False)
+    if sravn.count(True) == 1:
+        return False
+    elif sravn.count(True) == 2:
+        return False
+    elif sravn.count(True) == 3:
+        return True
+    elif sravn.count(True) == 0:
+        return False
+
+
+def check_word(word):
+    if word:
+        if not word.startswith(' ') and not word.endswith(' ') and word.islower():
+            return word
+        else:
+            return '-1'
+    else:
+        return '-1'
