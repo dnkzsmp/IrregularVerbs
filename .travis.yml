@@ -4,9 +4,14 @@ python:
 cache: pip
 install:
         - pip install pylint
+        - pip install flake8
 script:
-        - pylint start.py
-        - pylint rise/startwindow.py
-        - pylint process/grraphic.py
-        - pylint end/endwindow.py
+        - pylint start.py --disable=all --enable=similarities
+        - pylint rise/startwindow.py --disable=all --enable=similarities
+        - pylint process/graphic.py --disable=all --enable=similarities
+        - pylint end/endwindow.py --disable=all --enable=similarities
+        - flake8 start.py
+        - flake8 rise/startwindow.py
+        - flake8 process/graphic.py
+        - flake8 end/endwindow.py
         - python -m unittest discover
