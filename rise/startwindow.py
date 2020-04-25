@@ -7,8 +7,6 @@ class StartWindow(Tk):
         super().__init__()
         self.s = 0
         self.verbs = lines
-        self.geometry('600x230+560+340')
-        self.resizable(False, False)
         self.hello1 = Label(self)
         self.hello2 = Label(self)
         self.hello3 = Label(self)
@@ -30,6 +28,8 @@ class StartWindow(Tk):
         self.initUI()
 
     def initUI(self):
+        self.geometry('600x230+560+340')
+        self.resizable(False, False)
         self.title('Тренажер форм глагола "IrregularVerbs"')
         self.config(bg='#FFE1F9')
         self.hello1.config(text='Добро пожаловать в тренажер', bg='#FFE1F9', font=('Arial', 13, 'bold'))
@@ -58,9 +58,7 @@ class StartWindow(Tk):
             self.verbs_entry.delete(0, 'end')
             self.PS.config(text='\n*надо вести число '
                                 'число от 1 до 10', fg='red')
-        self.start.invoke()
 
     def exit_app(self):
         self.destroy()
-        self.Exit.invoke()
         sys.exit()
