@@ -1,4 +1,6 @@
-from tkinter import *
+from tkinter import Tk
+from tkinter import Label, Entry, Button
+import sys
 from process.graphic import Graphic
 
 

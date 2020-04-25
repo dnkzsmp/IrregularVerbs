@@ -1,4 +1,7 @@
-from tkinter import *
+from tkinter import Tk
+from tkinter import Label, Button, Listbox
+from tkinter import DISABLED, LEFT, RIGHT, END
+import sys
 
 
 class EndWindow(Tk):
