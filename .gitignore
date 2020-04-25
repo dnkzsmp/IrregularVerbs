@@ -1,5 +1,5 @@
 # Default ignored files
 __pycache__/
 *.pyc
-.idea/workspace.xml
-.tox
+/.idea/workspace.xml
+/.tox/
