@@ -124,14 +124,10 @@ def check_lists(words, verbs):
             sravn.append(True)
         else:
             sravn.append(False)
-    if sravn.count(True) == 1:
-        return False
-    if sravn.count(True) == 2:
-        return False
-    if sravn.count(True) == 3:
+    counter = sravn.count(True)
+    if counter == 3:
         return True
-    if sravn.count(True) == 0:
-        return False
+    return False
 
 
 def check_word(word):
