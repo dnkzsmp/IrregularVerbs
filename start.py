@@ -3,8 +3,8 @@ from rise.startwindow import StartWindow
 
 def open_file(path):
     try:
-        fin = open(path, encoding='utf-8')
-        fin.close()
+        file = open(path, encoding='utf-8')
+        file.close()
         return True
     except IOError:
         return False
