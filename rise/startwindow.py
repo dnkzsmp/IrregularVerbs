@@ -1,6 +1,7 @@
-from tkinter import Tk
+from tkinter import Tk, PhotoImage
 from tkinter import Label, Entry, Button
 import sys
+import os
 from process.graphic import Graphic
 
 
@@ -30,19 +31,25 @@ class StartWindow(Tk):
         self.initUI()
 
     def initUI(self):
+        self.iconphoto(True, PhotoImage(file=os.path.join(sys.path[0],
+                                                          'style/icon.png')))
         self.geometry('600x230+560+340')
         self.resizable(False, False)
         self.title('Тренажер форм глагола "IrregularVerbs"')
-        self.config(bg='#FFE1F9')
-        self.hello1.config(text='Добро пожаловать в тренажер', bg='#FFE1F9',
-                           font=('Arial', 13, 'bold'))
+        self.config(bg='#3A3A3A')
+        self.verbs_entry.config(bg='#DADADA')
+        self.start.config(bg='#DADADA')
+        self.Exit.config(bg='#DADADA')
+        self.hello1.config(text='Добро пожаловать в тренажер', bg='#3A3A3A',
+                           font=('Arial', 13, 'bold'), fg='#DADADA')
         self.hello2.config(text='форм неправильного глагола '
-                                '"IrregularVerbs"\n', bg='#FFE1F9',
-                           font=('Arial', 13, 'bold'))
+                                '"IrregularVerbs"\n', bg='#3A3A3A',
+                           font=('Arial', 13, 'bold'), fg='#DADADA')
         self.hello3.config(text='Введите кол-во глаголов для тренировки'
-                                '(от 1 до 10)', bg='#FFE1F9', font=5)
+                                '(от 1 до 10)', bg='#3A3A3A', font=5,
+                           fg='#11FF00')
         self.start.config(font=2)
-        self.PS.config(text='', fg='#FFE1F9', bg='#FFE1F9')
+        self.PS.config(text='', fg='#00FF38', bg='#3A3A3A')
 
     def start_check(self):
         if self.verbs_entry.get().isdigit() and \
@@ -51,11 +58,11 @@ class StartWindow(Tk):
             if self.s > 10:
                 self.verbs_entry.delete(0, 'end')
                 self.PS.config(text='\n*максимальное число: 10',
-                               font=3, fg='red')
+                               font=3, fg='#FF79E8')
             if self.s == 0:
                 self.verbs_entry.delete(0, 'end')
                 self.PS.config(text='\n*минимальное число: 1',
-                               fg='red')
+                               fg='#FF79E8', font=3)
             elif 1 <= self.s <= 10:
                 self.destroy()
                 root = Graphic(self.s, self.verbs)
@@ -64,7 +71,7 @@ class StartWindow(Tk):
                 self.verbs_entry.get().isspace():
             self.verbs_entry.delete(0, 'end')
             self.PS.config(text='\n*надо вести число '
-                                'число от 1 до 10', fg='red')
+                                'число от 1 до 10', fg='#FF79E8', font=2)
 
     def exit_app(self):
         self.destroy()
