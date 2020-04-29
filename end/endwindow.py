@@ -44,7 +44,8 @@ class EndWindow(Tk):
     def results(self):
         if self.wrong:
             lb_wrong = Listbox()
-            lb_wrong.insert(END, 'НЕПРАВИЛЬНО:')
+            lb_wrong.insert(END, '    [НЕПРАВИЛЬНО]:')
+            lb_wrong.insert(END, '')
             for i in self.wrong:
                 lb_wrong.insert(END, i)
                 lb_wrong.config(fg='#FF79E8', bg='#4D4D4D')
@@ -54,7 +55,8 @@ class EndWindow(Tk):
                 lb_wrong.pack(pady=15)
         if self.correct:
             lb_correct = Listbox()
-            lb_correct.insert(END, 'ПРАВИЛЬНО:')
+            lb_correct.insert(END, '      [ПРАВИЛЬНО]:')
+            lb_correct.insert(END, '')
             for j in self.correct:
                 lb_correct.insert(END, j)
                 lb_correct.config(fg='#11FF00', bg='#4D4D4D')
