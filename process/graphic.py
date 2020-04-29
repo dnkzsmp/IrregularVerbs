@@ -10,6 +10,7 @@ from end.endwindow import EndWindow
 class Graphic(Tk):
     def __init__(self, s, verbs):
         super().__init__()
+        self.repeat = []
         self.wron = 0
         self.corr = 0
         self.gap = 1
@@ -61,7 +62,8 @@ class Graphic(Tk):
         self.ps.config(bg='#DADADA')
         self.pp.config(bg='#DADADA')
         self.word.config(text='Ваше слово: ' + self.verbs[0] + '\n',
-                         bg='#3A3A3A', fg='#DADADA', font=('Arial', 20, 'bold'))
+                         bg='#3A3A3A', fg='#DADADA',
+                         font=('Arial', 20, 'bold'))
         self.label1.config(text='Введите Infinitive',
                            bg='#3A3A3A', fg='#DADADA')
         self.label2.config(text='Введите Past Simple',
@@ -88,10 +90,13 @@ class Graphic(Tk):
                 self.corr.append(self.verbs[0])
             else:
                 self.wrong.append(self.verbs[0])
-            self.status.config(fg='#11FF00', text='\n\n'
-                                                  'Нажмите "Следующее"\n')
+            self.status.config(fg='#11FF00',
+                               text='\n\nНажмите "Следующее"\n')
             self.next.config(state=NORMAL)
             self.check.config(state=DISABLED)
+            self.inf.config(state=DISABLED)
+            self.ps.config(state=DISABLED)
+            self.pp.config(state=DISABLED)
         else:
             self.status.config(fg='#FF79E8', text='\n\nОшибка ввода\n'
                                                   'Введите еще раз')
@@ -100,9 +105,14 @@ class Graphic(Tk):
             self.pp.delete(0, 'end')
 
     def change(self):
+        self.repeat.append(self.verbs[0])
         if self.gap < self.count:
             self.gap += 1
             self.verbs = random.choice(self.list).split()
+            for i in range(len(self.repeat)):
+                if i == self.verbs[0]:
+                    self.verbs = random.choice(self.list).split()
+                    break
             self.word.config(text='Ваше слово: ' + self.verbs[0] + '\n')
             self.status.config(fg='#FFD000', text='\n\n*вводить надо в '
                                                   'единственном числе'
@@ -110,6 +120,9 @@ class Graphic(Tk):
                                                   'строчные английские буквы')
             self.next.config(state=DISABLED)
             self.check.config(state=NORMAL)
+            self.inf.config(state=NORMAL)
+            self.ps.config(state=NORMAL)
+            self.pp.config(state=NORMAL)
             self.inf.delete(0, 'end')
             self.ps.delete(0, 'end')
             self.pp.delete(0, 'end')
