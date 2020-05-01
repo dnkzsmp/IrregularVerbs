@@ -1,4 +1,4 @@
-from rise.startwindow import StartWindow
+import sys
 
 
 def open_file(path):
@@ -11,10 +11,10 @@ def open_file(path):
 
 
 def main():
-    path = 'verbs.txt'
+    path = '../verbs.txt'
     check = open_file(path)
     if check is True:
-        with open('verbs.txt', encoding='utf-8') as fin:
+        with open('../verbs.txt', encoding='utf-8') as fin:
             strokes = fin.readlines()
         lines = [line.strip() for line in strokes]
         fin.close()
@@ -25,4 +25,6 @@ def main():
 
 
 if __name__ == '__main__':
+    sys.path.append('..')
+    from rise.startwindow import StartWindow
     main()
