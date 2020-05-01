@@ -4,6 +4,9 @@ from tkinter import NORMAL, DISABLED
 import os
 import sys
 import random
+
+sys.path.append('..')
+
 from end.endwindow import EndWindow
 
 
@@ -52,9 +55,12 @@ class Graphic(Tk):
 
     def initUI(self):
         self.iconphoto(True, PhotoImage(file=os.path.join(sys.path[0],
-                                                          'style/icon.png')))
+                                                          '../style/icon.png')))
         self.config(bg='#3A3A3A')
-        self.geometry('400x360+630+240')
+        self.geometry('400x360')
+        x = (self.winfo_screenwidth() - self.winfo_reqwidth()) / 2
+        y = (self.winfo_screenheight() - self.winfo_reqheight()) / 2
+        self.wm_geometry("+%d+%d" % (x, y))
         self.resizable(False, False)
         self.title('Тренажер форм глагола '
                    '"IrregularVerbs"')

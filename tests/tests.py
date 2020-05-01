@@ -1,24 +1,22 @@
-from process.graphic import check_word
-from process.graphic import check_lists
-from start import open_file
 import unittest
+import sys
 
 
 class TestUnits(unittest.TestCase):
     def test_good_name_file(self):
-        check = open_file('verbs.txt')
+        check = open_file('../verbs.txt')
         self.assertEqual(True, check)
 
     def test_bad_name_file1(self):
-        check1 = open_file('iuyzaf8')
+        check1 = open_file('verbs.txt')
         self.assertEqual(False, check1)
 
     def test_bad_name_file2(self):
-        check2 = open_file('verbs.dat')
+        check2 = open_file('../verbs.dat')
         self.assertEqual(False, check2)
 
     def test_bad_name_file3(self):
-        check3 = open_file('123.txt')
+        check3 = open_file('../123.txt')
         self.assertEqual(False, check3)
 
     def test_bad_name_file4(self):
@@ -48,7 +46,7 @@ class TestUnits(unittest.TestCase):
     def test_bad_stroke4(self):
         word4 = check_word(' ')
         self.assertEqual('-1', word4)
-        
+
     def test_good_stroke5(self):
         word5 = check_word('12345')
         self.assertEqual('-1', word5)
@@ -75,4 +73,8 @@ class TestUnits(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    sys.path.append('..')
+    from process.graphic import check_word
+    from process.graphic import check_lists
+    from start.start import open_file
     unittest.main()

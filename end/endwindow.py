@@ -22,8 +22,11 @@ class EndWindow(Tk):
 
     def initUI(self):
         self.iconphoto(True, PhotoImage(file=os.path.join(sys.path[0],
-                                                          'style/icon.png')))
+                                                          '../style/icon.png')))
         self.title('Тренажер IrregularVerbs')
+        x = (self.winfo_screenwidth() - self.winfo_reqwidth()) / 2
+        y = (self.winfo_screenheight() - self.winfo_reqheight()) / 2
+        self.wm_geometry("+%d+%d" % (x, y))
         self.config(bg='#3A3A3A')
         self.resizable(False, False)
         self.protocol("WM_DELETE_WINDOW",
