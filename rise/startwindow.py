@@ -1,7 +1,10 @@
-from tkinter import Tk, PhotoImage
-from tkinter import Label, Entry, Button
 import sys
 import os
+from tkinter import Label, Entry, Button
+from tkinter import Tk, PhotoImage
+
+sys.path.append('..')
+
 from process.graphic import Graphic
 
 
@@ -32,8 +35,11 @@ class StartWindow(Tk):
 
     def initUI(self):
         self.iconphoto(True, PhotoImage(file=os.path.join(sys.path[0],
-                                                          'style/icon.png')))
-        self.geometry('600x230+560+340')
+                                                          '../style/icon.png')))
+        self.geometry('600x230')
+        x = (self.winfo_screenwidth() - self.winfo_reqwidth()) / 2
+        y = (self.winfo_screenheight() - self.winfo_reqheight()) / 2
+        self.wm_geometry("+%d+%d" % (x, y))
         self.resizable(False, False)
         self.title('Тренажер форм глагола "IrregularVerbs"')
         self.config(bg='#3A3A3A')
