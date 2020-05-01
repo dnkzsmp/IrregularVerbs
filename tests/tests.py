@@ -1,6 +1,6 @@
 from process.graphic import check_word
 from process.graphic import check_lists
-from start import open_file
+from start.start import open_file
 import unittest
 
 
