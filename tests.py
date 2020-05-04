@@ -1,22 +1,24 @@
 import unittest
-import sys
+from process.graphic import check_word
+from process.graphic import check_lists
+from start.start import open_file
 
 
 class TestUnits(unittest.TestCase):
     def test_good_name_file(self):
-        check = open_file('../verbs.txt')
+        check = open_file('verbs.txt')
         self.assertEqual(True, check)
 
     def test_bad_name_file1(self):
-        check1 = open_file('verbs.txt')
+        check1 = open_file('verbs.csv')
         self.assertEqual(False, check1)
 
     def test_bad_name_file2(self):
-        check2 = open_file('../verbs.dat')
+        check2 = open_file('verbs.dat')
         self.assertEqual(False, check2)
 
     def test_bad_name_file3(self):
-        check3 = open_file('../123.txt')
+        check3 = open_file('123.txt')
         self.assertEqual(False, check3)
 
     def test_bad_name_file4(self):
@@ -71,10 +73,18 @@ class TestUnits(unittest.TestCase):
         bool4 = check_lists(['a', 'a', 'a'], ['быть', 'be', 'was', 'been'])
         self.assertEqual(False, bool4)
 
+    def test_bad_lists5(self):
+        bool5 = check_lists(['a', 'a', 'been'], ['быть', 'be', 'was', 'been'])
+        self.assertEqual(False, bool5)
+
+    def test_bad_lists6(self):
+        bool6 = check_lists(['be', 'a', 'a'], ['быть', 'be', 'was', 'been'])
+        self.assertEqual(False, bool6)
+
+    def test_bad_lists7(self):
+        bool7 = check_lists(['a', 'was', 'a'], ['быть', 'be', 'was', 'been'])
+        self.assertEqual(False, bool7)
+
 
 if __name__ == '__main__':
-    sys.path.append('..')
-    from process.graphic import check_word
-    from process.graphic import check_lists
-    from start.start import open_file
     unittest.main()
