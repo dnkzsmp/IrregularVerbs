@@ -8,4 +8,4 @@ Status of project:
 
 01.05.20 - Release-version is done
 
-[![Build Status](https://travis-ci.com/dnkzsmp/IrregVerbs.svg?branch=master)](https://travis-ci.com/dnkzsmp/IrregVerbs)
+[![Build Status](https://travis-ci.com/dnkzsmp/IrregularVerbs.svg?branch=master)](https://travis-ci.com/dnkzsmp/IrregularVerbs)
