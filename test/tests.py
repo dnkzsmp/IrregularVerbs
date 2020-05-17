@@ -1,7 +1,7 @@
 import unittest
-from process.graphic import check_word
-from process.graphic import check_lists
-from start.start import open_file
+from src.graphic import check_word
+from src.graphic import check_lists
+from src.start import open_file
 
 
 class TestUnits(unittest.TestCase):
