@@ -95,7 +95,9 @@ class Graphic(Tk):
             if count is True:
                 self.corr.append(self.verbs[0])
             else:
-                self.wrong.append(self.verbs[0])
+                stroke = self.verbs[0] + '[' + self.verbs[1] + ', ' + \
+                         self.verbs[2] + ', ' + self.verbs[3] + ']'
+                self.wrong.append(stroke)
             self.status.config(fg='#11FF00',
                                text='\n\nНажмите "Следующее"\n')
             self.next.config(state=NORMAL)
