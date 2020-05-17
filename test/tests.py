@@ -1,12 +1,10 @@
 import unittest
-from src.graphic import check_word
-from src.graphic import check_lists
-from src.start import open_file
+import sys
 
 
 class TestUnits(unittest.TestCase):
     def test_good_name_file(self):
-        check = open_file('verbs.txt')
+        check = open_file('../verbs.txt')
         self.assertEqual(True, check)
 
     def test_bad_name_file1(self):
@@ -87,4 +85,8 @@ class TestUnits(unittest.TestCase):
 
 
 if __name__ == '__main__':
+    sys.path.append('..')
+    from src.graphic import check_word
+    from src.graphic import check_lists
+    from src.start import open_file
     unittest.main()
