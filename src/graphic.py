@@ -7,7 +7,7 @@ import random
 
 sys.path.append('..')
 
-from end.endwindow import EndWindow
+from src.endwindow import EndWindow
 
 
 class Graphic(Tk):
