@@ -5,7 +5,7 @@ from tkinter import Tk, PhotoImage
 
 sys.path.append('..')
 
-from process.graphic import Graphic
+from src.graphic import Graphic
 
 
 class StartWindow(Tk):

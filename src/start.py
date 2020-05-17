@@ -26,5 +26,5 @@ def main():
 
 if __name__ == '__main__':
     sys.path.append('..')
-    from rise.startwindow import StartWindow
+    from src.startwindow import StartWindow
     main()
