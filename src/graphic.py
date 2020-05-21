@@ -5,10 +5,6 @@ import os
 import sys
 import random
 
-sys.path.append('..')
-
-from src.endwindow import EndWindow
-
 
 class Graphic(Tk):
     def __init__(self, s, verbs):
@@ -135,8 +131,10 @@ class Graphic(Tk):
             self.ps.delete(0, 'end')
             self.pp.delete(0, 'end')
         else:
+            sys.path.append('..')
+            from src.endwindow import EndWindow
             self.destroy()
-            win = EndWindow(self.wrong, self.corr)
+            win = EndWindow(self.wrong, self.corr, self.list)
             win.mainloop()
 
     def exit_app(self):
