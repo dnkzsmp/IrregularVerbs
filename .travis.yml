@@ -9,4 +9,4 @@ script:
         - pylint rise/startwindow.py --disable=E0611,C0103,C0116,C0115,R0902,C0114,E0401,C0413,F0001
         - pylint process/graphic.py --disable=C0114,C0103,C0115,R0902,C0116,C0200,R1710,E0401,C0413,F0001
         - pylint end/endwindow.py --disable=C0114,C0115,C0103,C0116,F0001
-        - python3 -m unittest discover test
+        - python3 -m unittest discover test -v
