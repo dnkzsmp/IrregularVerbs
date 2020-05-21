@@ -3,10 +3,6 @@ import os
 from tkinter import Label, Entry, Button
 from tkinter import Tk, PhotoImage
 
-sys.path.append('..')
-
-from src.graphic import Graphic
-
 
 class StartWindow(Tk):
     def __init__(self, lines):
@@ -70,6 +66,8 @@ class StartWindow(Tk):
                 self.PS.config(text='\n*минимальное число: 1',
                                fg='#FF79E8', font=3)
             elif 1 <= self.s <= 10:
+                sys.path.append('..')
+                from src.graphic import Graphic
                 self.destroy()
                 root = Graphic(self.s, self.verbs)
                 root.mainloop()
