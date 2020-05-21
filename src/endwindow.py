@@ -42,7 +42,7 @@ class EndWindow(Tk):
         self.label1.config(text='Спасибо, что приняли участие в тренажере\n'
                                 'IrregularVerbs. Надеемся, что ваши знания\n'
                                 'по английскому стали лучше.\n',
-                           fg='#DADADA', font=('Arial', 13, 'bold'),
+                           fg='#DADADA', font=('Arial', 13, 'italic'),
                            bg='#3A3A3A')
         self.label2.config(text='"Результаты" - посмотреть результаты '
                                 'тренажера\n'
