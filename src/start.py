@@ -1,13 +1,17 @@
 # -*- coding: utf-8 -*-
 import sys
+import os.path
 
 
 def open_file(file_name):
-    try:
-        file = open(file_name, encoding='utf-8')
-        file.close()
+    if os.path.isfile(file_name):
+        try:
+            file = open(file_name, encoding='utf-8')
+            file.close()
+        except IOError:
+            return False
         return True
-    except IOError:
+    else:
         return False
 
 
