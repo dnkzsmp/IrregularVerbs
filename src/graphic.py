@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from tkinter import Tk, PhotoImage
 from tkinter import Label, Entry, Button
 from tkinter import NORMAL, DISABLED
