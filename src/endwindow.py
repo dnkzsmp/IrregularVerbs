@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from tkinter import Tk, PhotoImage
 from tkinter import Label, Button, Listbox
 from tkinter import DISABLED, LEFT, RIGHT, END
