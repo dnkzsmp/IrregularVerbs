@@ -17,7 +17,7 @@ if __name__ == '__main__':
     path = '../verbs.txt'
     check = open_file(path)
     if check is True:
-        with open('../verbs.txt', encoding='utf-8') as fin:
+        with open(path, encoding='utf-8') as fin:
             strokes = fin.readlines()
         lines = [line.strip() for line in strokes]
         fin.close()
