@@ -6,16 +6,21 @@ import sys
 
 
 class EndWindow(Tk):
-    def __init__(self, wrong, append):
+    def __init__(self, wrong, append, verbs):
         super().__init__()
         self.wrong = wrong
         self.correct = append
-        self.label = Label(self)
+        self.verbs = verbs
+        self.label1 = Label(self)
+        self.label2 = Label(self)
         self.look = Button(self)
+        self.rest = Button(self)
         self.exit = Button(self)
         self.finish = Label(self)
-        self.label.pack()
+        self.label1.pack()
+        self.label2.pack()
         self.look.pack()
+        self.rest.pack()
         self.exit.pack()
         self.finish.pack()
         self.initUI()
@@ -31,17 +36,21 @@ class EndWindow(Tk):
         self.resizable(False, False)
         self.protocol("WM_DELETE_WINDOW",
                       self.exit_app)
-        self.label.config(bg='#3A3A3A')
+        self.label1.config(bg='#3A3A3A')
         self.finish.config(bg='#3A3A3A')
-        self.label.config(text='Спасибо, что приняли участие в тренажере\n'
-                               'IrregularVerbs. Надеемся, что ваши знания\n'
-                               'по английскому стали лучше.\n\n'
-                               '"Результаты" - посмотреть результаты '
-                               'тренажера\n'
-                               '"Выйти" - выйти из приложения\n', fg='#DADADA',
-                          font=('Arial', 13, 'bold'), bg='#3A3A3A')
+        self.label1.config(text='Спасибо, что приняли участие в тренажере\n'
+                                'IrregularVerbs. Надеемся, что ваши знания\n'
+                                'по английскому стали лучше.\n',
+                           fg='#DADADA', font=('Arial', 13, 'bold'),
+                           bg='#3A3A3A')
+        self.label2.config(text='"Результаты" - посмотреть результаты '
+                                'тренажера\n'
+                                '"Выйти" - выйти из приложения\n',
+                           fg='#FFD000')
+        self.label2.config(bg='#3A3A3A')
         self.look.config(text='Результаты', command=self.results)
         self.exit.config(text='Выйти', command=self.exit_app)
+        self.rest.config(text='Заново', command=self.restart)
         self.finish.config(text='', bg='#3A3A3A', fg='#DADADA')
 
     def results(self):
@@ -70,6 +79,13 @@ class EndWindow(Tk):
         else:
             self.finish.config(text='Нету правильных', fg='#FF79E8')
         self.look.config(state=DISABLED)
+
+    def restart(self):
+        sys.path.append('..')
+        from src.startwindow import StartWindow
+        self.destroy()
+        app = StartWindow(self.verbs)
+        app.mainloop()
 
     def exit_app(self):
         self.destroy()

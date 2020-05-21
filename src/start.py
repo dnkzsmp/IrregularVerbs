@@ -1,16 +1,18 @@
 import sys
 
 
-def open_file(path):
+def open_file(file_name):
     try:
-        file = open(path, encoding='utf-8')
+        file = open(file_name, encoding='utf-8')
         file.close()
         return True
     except IOError:
         return False
 
 
-def main():
+if __name__ == '__main__':
+    sys.path.append('..')
+    from src.startwindow import StartWindow
     path = '../verbs.txt'
     check = open_file(path)
     if check is True:
@@ -22,9 +24,3 @@ def main():
         app.mainloop()
     else:
         print('Файл не открыт. Завершена работа программы.')
-
-
-if __name__ == '__main__':
-    sys.path.append('..')
-    from src.startwindow import StartWindow
-    main()
