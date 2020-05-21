@@ -46,6 +46,7 @@ class EndWindow(Tk):
                            bg='#3A3A3A')
         self.label2.config(text='"Результаты" - посмотреть результаты '
                                 'тренажера\n'
+                                '"Заново" - начать заново\n'
                                 '"Выйти" - выйти из приложения\n',
                            fg='#FFD000')
         self.label2.config(bg='#3A3A3A')
